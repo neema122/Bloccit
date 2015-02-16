@@ -4,6 +4,10 @@ class PostsController < ApplicationController
   end
 
   def show
+<<<<<<< HEAD
+=======
+    @post = Post.find(params[:id])
+>>>>>>> create-posts-controller
   end
 
   def new
