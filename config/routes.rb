@@ -1,13 +1,12 @@
 Bloccit::Application.routes.draw do
-<<<<<<< HEAD
+  devise_for :users
    resources :posts
 
    get 'about' => 'welcome#about'
-=======
+
   resources :posts
 
   get 'about' => 'welcome#about'
->>>>>>> create-posts-controller
   
     root to: 'welcome#index'
 end
