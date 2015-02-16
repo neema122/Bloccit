@@ -36,6 +36,7 @@ gem 'spring',        group: :development
 
 gem 'faker'
 gem 'devise'
+gem 'pundit'
 
 
 # Use ActiveModel has_secure_password
