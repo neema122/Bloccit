@@ -3,9 +3,7 @@
   <%= link_to "New Post", new_post_path, class: 'btn btn-success' %>
 <% end %>
 <% @posts.each do |post| %>
-<<<<<<< HEAD
-  <p><%= link_to post.title, post_path(post.id) %></p>
-=======
+
    <p><%= link_to post.title, post %></p>
    <div class="media">
      <div class="media-body">
@@ -18,5 +16,4 @@
          </small>
      </div>
    </div>
->>>>>>> create-posts-controller
 <% end %>

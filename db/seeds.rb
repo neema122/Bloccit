@@ -77,3 +77,9 @@ end
  )
  member.skip_confirmation!
  member.save!
+
+puts "Seed finished"
+puts "#{User.count} users created"
+puts "#{Topic.count} topics created"
+puts "#{Post.count} posts created"
+puts "#{Comment.count} comments created"

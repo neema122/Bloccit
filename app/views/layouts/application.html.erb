@@ -11,15 +11,10 @@
   
        <ul class="nav nav-tabs">
 
-<<<<<<< HEAD
          <li><%= link_to "Bloccit", root_path %></li>
          <li><%= link_to "About", about_path %></li>
          <li><%= link_to "Follow me","http://www.facebook.com/trybloc", class: "social-btn" %></li>
-=======
-        <li><%= link_to "Bloccit", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Follow me","http://www.facebook.com/trybloc", class: "social-btn" %></li>
->>>>>>> create-posts-controller
+
               <div class="pull-right user-info">
            <% if current_user %>
              Hello <%= current_user.name %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
@@ -53,8 +48,4 @@
 
   </body>
 </html>
-<%= yield %>
- </div>
 
-</body>
-</html>

@@ -31,9 +31,9 @@ class PostsController < ApplicationController
   def edit
       @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
-    uthorize @post
+    authorize @post
   end
-end
+
 
    def update
          @topic = Topic.find(params[:topic_id])
@@ -47,3 +47,5 @@ end
        render :edit
      end
    end
+  
+end
