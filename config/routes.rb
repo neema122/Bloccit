@@ -1,9 +1,22 @@
 Bloccit::Application.routes.draw do
+  get 'summaries/new'
+
+  get 'summaries/create'
+
+  get 'summaries/show'
+
+  get 'summaries/edit'
+
+  get 'summaries/update'
+
+  get 'summaries/destroy'
+
   devise_for :users
     resources :users, only: [:update]
       resources :topics do
-       resources :posts, except: [:index]
-        resources :summaries
+        resources :posts, except: [:index] do
+          resources :summaries
+        end
    end
 
    get 'about' => 'welcome#about'
