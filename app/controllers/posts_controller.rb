@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.paginate(page: params[:page], per_page: 10)
        authorize @posts
   end
 
   def show
     @post = Post.find(params[:id])
-      @topic = Topic.find(params[:topic_id])
+      @topics = @topic.posts.paginate(page: params[:page], per_page: 10)
   end
 
   def new
