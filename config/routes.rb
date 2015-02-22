@@ -1,4 +1,6 @@
 Bloccit::Application.routes.draw do
+  get 'comments/create'
+
   get 'summaries/new'
 
   get 'summaries/create'
@@ -15,7 +17,8 @@ Bloccit::Application.routes.draw do
     resources :users, only: [:update]
       resources :topics do
         resources :posts, except: [:index] do
-          resources :summaries
+          resources :comments, only: [:create] do
+            resources :summaries
         end
    end
 

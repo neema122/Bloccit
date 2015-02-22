@@ -4,9 +4,11 @@ class PostsController < ApplicationController
        authorize @posts
   end
 
-  def show
+ def show
+    @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
-      @topics = @topic.posts.paginate(page: params[:page], per_page: 10)
+    @comments = @post.comments
+    @comment = Comment.new
   end
 
   def new
