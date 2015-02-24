@@ -1,34 +1,20 @@
 Bloccit::Application.routes.draw do
-  get 'comments/create'
-
-  get 'summaries/new'
-
-  get 'summaries/create'
-
-  get 'summaries/show'
-
-  get 'summaries/edit'
-
-  get 'summaries/update'
-
-  get 'summaries/destroy'
 
   devise_for :users
-    resources :users, only: [:update]
-      resources :topics do
-        resources :posts, except: [:index] do
-          resources :comments, only: [:create, :destroy] do
-            resources :summaries
-        end
+  resources :users, only: [:update]
+
+
+   resources :topics do
+     resources :posts, except: [:index]
+   end
+ 
+   resources :posts, only: [] do
+     resources :comments, only: [:create, :destroy]
    end
 
-   get 'about' => 'welcome#about'
-
-  resources :posts
-
   get 'about' => 'welcome#about'
-  
-    root to: 'welcome#index'
+
+  root to: 'welcome#index'
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
