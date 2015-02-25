@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
     mount_uploader :avatar, AvatarUploader
   has_many :comments
   has_many :votes
+  has_many :favorites
   
   def admin?
    role == 'admin'
@@ -18,6 +19,10 @@ class User < ActiveRecord::Base
   
    def favorited(post)
      favorites.where(post_id: post.id).first
+   end
+  
+  def voted(post)
+     votes.where(post_id: post.id).first
    end
 end
 
