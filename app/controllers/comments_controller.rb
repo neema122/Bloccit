@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
 
     @comment = current_user.comments.build(params[:comment])
     @comment.post = @post
+      @new_comment = Comment.new
   end
   
   def destroy
@@ -26,3 +27,9 @@ class CommentsController < ApplicationController
         end
   end
 end
+
+private
+
+  def comment_params
+    params.require(:comment).permit(:body)
+  end
